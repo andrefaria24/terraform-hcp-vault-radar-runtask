@@ -13,7 +13,7 @@ resource "random_string" "suffix" {
 }
 
 locals {
-  region         = "us-west-2"
+  region         = "us-east-2"
   azs            = slice(data.aws_availability_zones.available.names, 0, 3)
   name           = var.randomize_name ? "${var.name}-${random_string.suffix.result}" : var.name
   workspace_name = var.randomize_name ? "${var.hcp_tf_workspace_name}-${random_string.suffix.result}" : var.hcp_tf_workspace_name
@@ -31,7 +31,6 @@ locals {
 
 module "radar_runtask" {
   source                    = "github.com/andrefaria24/terraform-hcp-vault-radar-runtask"
-  #source = "C:\\Dev\\terraform-hcp-vault-radar-runtask"
   name                      = local.name
   hcp_client_id             = var.hcp_client_id
   hcp_client_secret         = var.hcp_client_secret
@@ -73,7 +72,7 @@ resource "tfe_workspace_run_task" "pre_radar_runtask" {
   workspace_id      = tfe_workspace.run_task_workspace.id
   task_id           = tfe_organization_run_task.hcp_tf_org_run_task.id
   enforcement_level = var.run_task_enforcement_level
-  stage             = "pre_plan"
+  stages            = ["pre_plan"]
 }
 
 #####################################################################################
@@ -128,4 +127,3 @@ module "ecs_cluster" {
 
   tags = local.tags
 }
-
