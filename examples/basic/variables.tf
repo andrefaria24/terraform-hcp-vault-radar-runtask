@@ -1,6 +1,6 @@
 variable "hcp_project_id" {
   type        = string
-  description = "The ID of HCP project for Vault Radar to use"
+  description = "The ID of HCP Terraform project for Vault Radar to use"
 }
 
 variable "hcp_client_id" {

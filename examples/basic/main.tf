@@ -30,8 +30,8 @@ locals {
 #####################################################################################
 
 module "radar_runtask" {
-  source                    = "gautambaghel/vault-radar-runtask/hcp"
-  version                   = "1.0.0-alpha"
+  source                    = "github.com/andrefaria24/terraform-hcp-vault-radar-runtask"
+  #source = "C:\\Dev\\terraform-hcp-vault-radar-runtask"
   name                      = local.name
   hcp_client_id             = var.hcp_client_id
   hcp_client_secret         = var.hcp_client_secret
@@ -82,7 +82,7 @@ resource "tfe_workspace_run_task" "pre_radar_runtask" {
 
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
-  version = "~> 5.0"
+  version = "~> 5.17.0"
 
   name = local.name
   cidr = local.vpc_cidr

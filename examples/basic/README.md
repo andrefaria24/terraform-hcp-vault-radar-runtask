@@ -32,7 +32,7 @@
 |------|-------------|------|---------|:--------:|
 | <a name="input_hcp_client_id"></a> [hcp\_client\_id](#input\_hcp\_client\_id) | The client ID of HCP project for Vault Radar to use | `string` | n/a | yes |
 | <a name="input_hcp_client_secret"></a> [hcp\_client\_secret](#input\_hcp\_client\_secret) | The client secret of HCP project for Vault Radar to use | `string` | n/a | yes |
-| <a name="input_hcp_project_id"></a> [hcp\_project\_id](#input\_hcp\_project\_id) | The ID of HCP project for Vault Radar to use | `string` | n/a | yes |
+| <a name="input_hcp_project_id"></a> [hcp\_project\_id](#input\_hcp\_project\_id) | The ID of HCP Terraform project for Vault Radar to use | `string` | n/a | yes |
 | <a name="input_hcp_tf_org_name"></a> [hcp\_tf\_org\_name](#input\_hcp\_tf\_org\_name) | The name of the HCP Terraform organization to create the run task | `string` | n/a | yes |
 | <a name="input_hcp_tf_workspace_name"></a> [hcp\_tf\_workspace\_name](#input\_hcp\_tf\_workspace\_name) | The name of the HCP Terraform workspace to attach the run task | `string` | `"terraform-shell-radar-runtask"` | no |
 | <a name="input_hmac_key"></a> [hmac\_key](#input\_hmac\_key) | The HMAC key for the run task | `string` | `"abc123"` | no |

@@ -1,11 +1,11 @@
 terraform {
 
   cloud {
-    organization = "organization_name"
+    organization = "acfaria-hashicorp"
     hostname     = "app.terraform.io"
 
     workspaces {
-      name = "workspace_name"
+      name = "terraform-shell-radar-runtask-fpgk"
     }
   }
 
